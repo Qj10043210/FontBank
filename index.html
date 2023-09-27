@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FontGetter</title>
+    <link rel="icon" type="image/x-icon" href="./android-chrome-512x512.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+        integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style>
+        #inputBox{
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 76px;
+
+        }
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        li{
+            text-align: center;
+            background-color:rgba(255, 255, 240,0.6);
+            border: 2px solid darkgoldenrod;
+            border-radius: 5px;
+            
+            cursor: pointer;
+            display: block;
+            flex: 0 0 30%;
+            min-height: 50px;
+            
+        }
+        .TT2{
+            display: none;
+        }
+        #cute{
+            z-index: -1;
+            border-radius: 30%;
+            width: 50%;
+            height: 50%;
+            background-image: url(./cute.png);
+            background-size:contain;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            background-position: top right;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+        }
+
+        #confirming{
+            background-image: url(./android-chrome-512x512.png);
+            width: 54px;
+            height: 54px;
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: none;
+            border: 1px dotted skyblue;
+            cursor: pointer;
+            padding: 0;
+        }
+        #newFont{
+            border-radius: 20px;
+            display: block;
+            width: 500px;
+            font-family: 'Caveat';
+            font-size: 40px;
+            padding: 0;
+        }
+        </style>
+
+    </head>
+<body>
+    <style type="text/css">
+        /* @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap'); */
+    </style>
+    <div id="inputBox">
+        <input type="text" name="newFont" id="newFont" placeholder="please input perfectly correct name!!">
+        <input type="button" value="" id="confirming">
+        
+    </div>
+    <div>
+        <ul>
+            <li><span class="abc">123 </span><span class="TT">Shadows Into Light</span><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">Play</span><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">Russo One</span ><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">Amatic SC</span ><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">Phudu</span><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">Righteous</span><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">Pacifico</span><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">VT323</span><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">Share Tech Mono</span><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">Kristi</span><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">Rock Salt</span><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">Itim</span><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">Comic Neue</span><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">Patrick Hand</span><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">Luckiest Guy</span><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">Fuggles</span><span class="TT2"></span></li>
+            <li><span class="abc">123 </span><span class="TT">Caveat</span><span class="TT2"></span></li>
+            
+
+            
+        </ul>
+        <!-- <li><span class="abc">123 </span><span class="TT"></span><span class="TT2"></span></li> -->
+    </div>
+    <div id="cute"></div>
+    <script>
+        
+        function newFont(){
+        let e =""
+          for(let i =0; i<$('.TT').length; i++){
+            let a = $('.TT').eq(i)
+            let b = a.text()
+            let c = b.split(" ");
+            let d = ""
+            for(let i2= 0; i2<c.length;i2++){
+                d += c[i2];
+                if(i2==c.length-1){
+                    break;
+                }
+                d+="+"
+            }
+            let f = `@import url('https://fonts.googleapis.com/css2?family=${d}&display=swap');`
+            e+=f;
+          }
+
+        $(document.head).append($(`<style type="text/css">${e}</style>`));
+       
+
+        for(let i =0; i<$('.TT').length; i++){
+            let a = $('.TT').eq(i)
+            let b = a.text()
+            $(a).css({
+                fontSize : '2em',
+                fontFamily : b,
+                lineHeight : '2em'
+            })
+            $(a).prev().css({
+                fontSize : '2em',
+                fontFamily : b,
+                lineHeight :'2em'
+            })
+            
+            let c = b.split(" ");
+            let d = ""
+            for(let i2= 0; i2<c.length;i2++){
+                d += c[i2];
+                if(i2==c.length-1){
+                    break;
+                }
+                d+="+"
+            }
+            let f = `@import url('https://fonts.googleapis.com/css2?family=${d}&display=swap');`
+            $(a).next('.TT2').text(f);
+            
+        }
+    }
+    
+    newFont()
+    $(document).on("click", '#confirming',function(){
+        if($('#newFont').val()!=""&&$('#newFont').val()!==null){
+            let a = $('#newFont').val();
+            let b = `<li><span class="abc">123 </span><span class='TT'>${a}</span><span class="TT2"></span></li>`;
+            $('ul').append(b);
+            newFont();
+            $('#newFont').val("");
+        }  
+        else{
+            alert("please write name")
+        }
+    })
+$(document).on("click", "li", function(){
+    let a = $(this).children('.TT').next('.TT2').text();
+    $(this).next('.TT2').select();
+    navigator.clipboard.writeText(a);
+    alert($(this).children('.TT').text()+" <- has copied!")
+})
+
+   
+    </script>
+</body>
+</html>
