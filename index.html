@@ -10,6 +10,11 @@
         integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <style>
+        @import url('https://fonts.googleapis.com/css2?family=Wavefont&display=swap');
+        body{
+            background-color: rgba(240, 255, 255,0.7);
+            font-family: 'Wavefont';
+        }
         #inputBox{
             margin: 10px auto;
             display: flex;
@@ -24,15 +29,18 @@
             gap: 30px;
         }
         li{
-            text-align: center;
+            
             background-color:rgba(255, 255, 240,0.6);
             border: 2px solid darkgoldenrod;
             border-radius: 5px;
             
             cursor: pointer;
             display: block;
-            flex: 0 0 30%;
+            flex: 0 0 23%;
             min-height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             
         }
         .TT2{
@@ -60,9 +68,10 @@
             background-size: 100% 100%;
             background-position: center;
             background-repeat: no-repeat;
-            background-color: none;
-            border: 1px dotted skyblue;
+            background-color: rgba(240, 255, 255,0.7);
+            border: none;
             cursor: pointer;
+            margin-left: 5px;
             padding: 0;
         }
         #newFont{
@@ -70,7 +79,8 @@
             display: block;
             width: 500px;
             font-family: 'Caveat';
-            font-size: 40px;
+            font-size: 38px;
+            text-align: center;
             padding: 0;
         }
         </style>
@@ -87,23 +97,23 @@
     </div>
     <div>
         <ul>
-            <li><span class="abc">123 </span><span class="TT">Shadows Into Light</span><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">Play</span><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">Russo One</span ><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">Amatic SC</span ><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">Phudu</span><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">Righteous</span><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">Pacifico</span><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">VT323</span><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">Share Tech Mono</span><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">Kristi</span><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">Rock Salt</span><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">Itim</span><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">Comic Neue</span><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">Patrick Hand</span><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">Luckiest Guy</span><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">Fuggles</span><span class="TT2"></span></li>
-            <li><span class="abc">123 </span><span class="TT">Caveat</span><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Shadows Into Light</span><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Play</span><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Russo One</span ><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Amatic SC</span ><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Phudu</span><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Righteous</span><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Pacifico</span><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">VT323</span><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Share Tech Mono</span><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Kristi</span><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Rock Salt</span><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Itim</span><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Comic Neue</span><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Patrick Hand</span><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Luckiest Guy</span><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Fuggles</span><span class="TT2"></span></li>
+            <li><span class="abc">123   .</span><span class="TT">Caveat</span><span class="TT2"></span></li>
             
 
             
@@ -138,14 +148,14 @@
             let a = $('.TT').eq(i)
             let b = a.text()
             $(a).css({
-                fontSize : '2em',
-                fontFamily : b,
-                lineHeight : '2em'
+                fontSize : '1.7em',
+                fontFamily : `${b}, 'Wavefont'`,
+                
             })
             $(a).prev().css({
-                fontSize : '2em',
-                fontFamily : b,
-                lineHeight :'2em'
+                fontSize : '1.7em',
+                fontFamily : `${b}, 'Wavefont'`,
+                
             })
             
             let c = b.split(" ");
@@ -167,7 +177,7 @@
     $(document).on("click", '#confirming',function(){
         if($('#newFont').val()!=""&&$('#newFont').val()!==null){
             let a = $('#newFont').val();
-            let b = `<li><span class="abc">123 </span><span class='TT'>${a}</span><span class="TT2"></span></li>`;
+            let b = `<li><span class="abc">123  .</span><span class='TT'>${a}</span><span class="TT2"></span></li>`;
             $('ul').append(b);
             newFont();
             $('#newFont').val("");
@@ -177,6 +187,10 @@
         }
     })
 $(document).on("click", "li", function(){
+    if($(this).children('.TT').width()<=50){
+        $(this).remove();
+        return false;
+    }
     let a = $(this).children('.TT').next('.TT2').text();
     $(this).next('.TT2').select();
     navigator.clipboard.writeText(a);
